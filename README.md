@@ -17,22 +17,22 @@
 ```
 - app
 | - template
-| |- index.html  # main page of web app
-| |- go.html  # classification result page of web app
+| |- index.html  # Main page
+| |- go.html  # Classification result page
 |- run.py  # Flask file that runs app
 |- language.csv # Language of the messages
 
 - data
-|- disaster_categories.csv  # data to process
-|- disaster_messages.csv  # data to process
+|- disaster_categories.csv  # Data to process
+|- disaster_messages.csv  # Data to process
 |- process_data.py
-|- Project.db   # database to save clean data to
+|- Project.db   # Database to save clean data to
 
 - models
 |- train_classifier.py
-|- disaster_model.pkl  # saved model, might not be in this repo since the size is too high
+|- disaster_model.pkl  # Saved ML model, might not be in this repo since the size is too high
 
-- visualization_trial.ipnyb
+- visualization_trial.ipnyb # Notebook for visualization trial for plotly
 
 - README.md
 ```
