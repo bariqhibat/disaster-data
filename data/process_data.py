@@ -22,6 +22,17 @@ def load_data(msg_path,cat_path):
 
     return df
 
+def save_data(df, filename):
+    """Saves the resulting data
+    Args:
+        df [DataFrame]: the cleaned dataframe
+        filename [string]: filename of the dataset
+    """
+    engine = create_engine('sqlite:///'+filename)
+    df.to_sql('Project', engine, index=False, if_exists='replace')
+    engine.dispose()
+    
+
 def clean_data(df):
     """Clean the data
 
@@ -47,11 +58,13 @@ def clean_data(df):
                    axis=1)
     df = df[df['related'] != 2]
     df = df.drop_duplicates() 
+    
+    return df
 
-    #Load to database
-    engine = create_engine('sqlite:///Project.db')
-    df.to_sql('Project', engine, index=False)
-    engine.dispose()
+    # #Load to database
+    # engine = create_engine('sqlite:///Project.db')
+    # df.to_sql('Project', engine, index=False)
+    # engine.dispose()
     
 
 def main():
