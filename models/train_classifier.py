@@ -80,9 +80,9 @@ def build_model():
     ])
     
     param_grid = {
-        'clf__estimator__n_estimators': [10,11]
-        # 'clf__estimator__min_samples_split': [2,4],
-        # 'clf__estimator__max_depth': [2,6],
+        'clf__estimator__n_estimators': [10,100],
+        'clf__estimator__min_samples_split': [2,4],
+        'clf__estimator__max_depth': [2,6],
     }
     
     cv = GridSearchCV(pipeline, param_grid, cv=3, verbose=10)
