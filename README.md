@@ -1,5 +1,11 @@
 # Disaster Response Pipeline Project
 
+### Project Overview
+
+Disaster can happen any time. It cannot be predicted nor could it be avoided. From "[our world in data](https://ourworldindata.org/natural-disasters), we get that natural disasters kill on average 60.000 people per year and are responsible for 0.1% of global deaths. When disaster did happen, all we think is how to survive from the disaster itself. In process of doing that, we might in need of some help. This might happen if we find ourselves injured in the process of doing so, or other people did. Hence, we try to outreach the people from outside by any means of communications. One of them is by using social media.
+Figure-Eight provided us a data of [disaster response data](https://www.figure-eight.com/dataset/combined-disaster-response-data/) from all its users around the globe. Although it is clean, it still needed some learning and wrangling process before it can be used for machine learning application.
+Our job here, is to make a web app to determine each sentences to 36 types of text provided in the data.
+
 ### Instructions:
 
 1. Run the following commands in the project's root directory to set up your database and model.
@@ -45,17 +51,12 @@
 
 - flask
 - joblib
-- pickle
 - googletrans
 - pandas
 - plotly
 - numpy
 - scikit-learn
 - sqlalchemy
-
-### Data Details:
-
-Data used in this project comes from Figure-Eight [disaster response data](https://www.figure-eight.com/dataset/combined-disaster-response-data/). Although it is clean, it still needed some learning and wrangling process before it can be used for machine learning application.
 
 ### Improvements and Difficulties:
 
