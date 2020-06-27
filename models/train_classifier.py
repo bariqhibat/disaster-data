@@ -3,7 +3,7 @@ import nltk
 import pandas as pd
 import string
 import re
-import pickle
+import joblib
 
 from scipy import stats 
 from sqlalchemy import create_engine
@@ -52,7 +52,7 @@ def tokenize(text):
     Returns:
         clean_tokens [list]: Export a list of tokens
     """    
-    text = re.sub('[^a-zA-Z]','',text).lower()
+    text = re.sub('[^a-zA-Z]',' ',text).lower()
     
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
@@ -80,9 +80,9 @@ def build_model():
     ])
     
     param_grid = {
-        'clf__estimator__n_estimators': [10,100],
-        'clf__estimator__min_samples_split': [2,4],
-        'clf__estimator__max_depth': [2,6],
+        'clf__estimator__n_estimators': [10,11]
+        # 'clf__estimator__min_samples_split': [2,4],
+        # 'clf__estimator__max_depth': [2,6],
     }
     
     cv = GridSearchCV(pipeline, param_grid, cv=3, verbose=10)
@@ -111,7 +111,7 @@ def save_model(model, model_filepath):
         model: Machine Learning Model
         model_filepath: Filepath for saving
     """    
-    pickle.dump(model, model_filepath)
+    joblib.dump(model, model_filepath)
 
 def main():
     if len(sys.argv) == 3:
